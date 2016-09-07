@@ -13,6 +13,7 @@ import sel.*;
 
 public class SelTests 
 {
+	
 	public static void selTester(String inRoot,String outRoot, String nombreCaso) throws IOException
 	{
 		
@@ -30,6 +31,6 @@ public class SelTests
 	
 	public static void main(String[] args) throws IOException {
 
-		selTester("01_caso2x2simple.in","salidaResultado.out","Caso Basico");
+		selTester("casoFatiga300.out","salidaResultado.out","Caso Basico");
 	}
 }

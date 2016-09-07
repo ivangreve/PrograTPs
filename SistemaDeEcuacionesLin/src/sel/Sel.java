@@ -68,9 +68,12 @@ public class Sel {
 		for (int i = 0; i < resolverVector.getDimension(); i++) 
 			salida.println(this.resolverVector.obtenerElemento(i));
 			
+	
+		Vector Baux=this.matriz.multiplicar(resolverVector);
 		
 		salida.println();
-		salida.println(this.error);
+		salida.println(Math.abs(Baux.norma2() - this.vectorB.norma2()));
+		
 		
 		salida.close();
 	}
@@ -79,22 +82,25 @@ public class Sel {
 	
 	public static void main(String[] args) throws IOException {
 
-		Sel sistemasEcu = new Sel("01_caso2x2simple.in"); //Creo el Sistema de Ecuaciones a partir de entrada.ini
+		Sel sistemasEcu = new Sel("03_4x4_Normal.in"); //Creo el Sistema de Ecuaciones a partir de entrada.ini
 		
-		Calendar tIni = new GregorianCalendar();////INICIO////
+		Calendar tIni = new GregorianCalendar();////INICIO TIMER////
 		
 		sistemasEcu.resolver();
 		
-		Calendar tFin = new GregorianCalendar();/////FIN//////
+		Calendar tFin = new GregorianCalendar();/////FIN TIMER//////
 
 		sistemasEcu.escribirSalida("salidaResultado.out"); //Grabo resultado de sistema en archivo de salida
 		
 		long diff = tFin.getTimeInMillis() - tIni.getTimeInMillis();
 		
-		System.out.println(sistemasEcu.n);
-		System.out.println(sistemasEcu.resolverVector);
 		
-		System.out.println(diff);
+		/////Salida por pantalla/////
+		System.out.println(sistemasEcu.n); // N
+		System.out.println(sistemasEcu.resolverVector); //Vector resultado
+		Vector Baux=sistemasEcu.matriz.multiplicar(sistemasEcu.resolverVector); 
+		System.out.println("Error: "+Math.abs(Baux.norma2() - sistemasEcu.vectorB.norma2())); //Error
+		System.out.println("Tiempo en ms: " + diff + "ms");
 
 	}
 
