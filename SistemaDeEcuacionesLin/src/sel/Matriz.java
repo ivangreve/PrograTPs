@@ -26,7 +26,7 @@ public class Matriz {
 	public Matriz(String entrada) throws FileNotFoundException {
 
 		Scanner sc = new Scanner(new File(entrada));
-
+		sc.useLocale(Locale.US);
 		fila = sc.nextInt();
 		columna = sc.nextInt();
 		matriz = new double[fila][columna];

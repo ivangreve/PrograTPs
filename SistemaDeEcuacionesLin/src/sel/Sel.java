@@ -49,6 +49,16 @@ public class Sel {
 		return resolverVector;
 	}
 	
+	public Matriz getMatriz()
+	{
+		return this.matriz;
+	}
+	
+	public Vector getVector()
+	{
+		return this.vectorB;
+	}
+	
 	public void escribirSalida(String pathSalida) throws IOException{
 		
 		PrintWriter salida = new PrintWriter(new FileWriter(pathSalida));

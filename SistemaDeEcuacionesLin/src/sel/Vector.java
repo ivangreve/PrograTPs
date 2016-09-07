@@ -49,6 +49,7 @@ public class Vector {
 	public Vector(String entrada) throws FileNotFoundException {
 
 		Scanner sc = new Scanner(new File(entrada));
+		sc.useLocale(Locale.US);
 		dimension = sc.nextInt();
 		vector = new double[dimension];
 		for (int x = 0; x < dimension; x++) {
