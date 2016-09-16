@@ -82,7 +82,7 @@ public class Sel {
 	
 	public static void main(String[] args) throws IOException {
 
-		Sel sistemasEcu = new Sel("03_4x4_Normal.in"); //Creo el Sistema de Ecuaciones a partir de entrada.ini
+		Sel sistemasEcu = new Sel("casoFatiga1000.out"); //Creo el Sistema de Ecuaciones a partir de entrada.ini
 		
 		Calendar tIni = new GregorianCalendar();////INICIO TIMER////
 		
